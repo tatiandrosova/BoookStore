@@ -15,7 +15,7 @@ $("#passwd-btn").click(function(){
         sessionStorage.setItem('key', 'value');
         $('#myModal').modal("hide");
     }
-})
+});
 
 $('.title-window').css('cursor', 'pointer');
 
@@ -35,7 +35,7 @@ function showBooks(){
         $('<span></span>').addClass('glyphicon glyphicon-remove').prependTo( $("#" + key));
         $('<span></span>').addClass('glyphicon glyphicon-pencil').prependTo( $("#" + key));
         $('<li></li>').addClass('price')
-          .text("Цена: " + JSON.parse(localStorage.getItem(key)).price).prependTo( $("#" + key));
+          .text("Цена: " + JSON.parse(localStorage.getItem(key)).price + ' руб.').prependTo( $("#" + key));
         $('<li></li>').addClass('publ')
           .text("Издательство: " + JSON.parse(localStorage.getItem(key)).publ).prependTo( $("#" + key));
         $('<li></li>').addClass('author')
@@ -74,23 +74,27 @@ $('#save').click( function() {
     
    if($("#edit-title").val() == '') {
        $('#edit-alert').html("Введите название книги!");
+       $("#edit-title").focus();
        $('#edit-alert').fadeIn().delay(1000).fadeOut();
        return false;
    }
     if($("#edit-author").val() == '') {
        $('#edit-alert').html("Введите автора книги!");
+       $("#edit-author").focus();
        $('#edit-alert').fadeIn().delay(1000).fadeOut();
        
        return false;
    }
     if($("#edit-publ").val() == '') {
        $('#edit-alert').html("Введите издательство!");
+       $("#edit-publ").focus();
        $('#edit-alert').fadeIn().delay(1000).fadeOut();
        
        return false;
    }
-    if($("#edit-price").val() == '') {
+    if($("#edit-price").val() == '' || !$("#edit-price").val().match('^[0-9]+$')) {
        $('#edit-alert').html("Введите цену книги!");
+       $("#edit-price").focus();
        $('#edit-alert').fadeIn().delay(1000).fadeOut();
        
        return false;
@@ -111,23 +115,27 @@ $('#add').click( function() {
 
    if($("#input-title").val() == '') {
        $('#alert').html("Введите название книги!");
+       $("#input-title").focus();
        $('#alert').fadeIn().delay(1000).fadeOut();
        return false;
    }
     if($("#input-author").val() == '') {
        $('#alert').html("Введите автора книги!");
+       $("#input-author").focus();
        $('#alert').fadeIn().delay(1000).fadeOut();
        
        return false;
    }
     if($("#input-publ").val() == '') {
        $('#alert').html("Введите издательство!");
+       $("#input-publ").focus();
        $('#alert').fadeIn().delay(1000).fadeOut();
        
        return false;
    }
-    if($("#input-price").val() == '') {
+    if($("#input-price").val() == '' || !$("#input-price").val().match('^[0-9]+$')) {
        $('#alert').html("Введите цену книги!");
+       $("#input-price").focus();
        $('#alert').fadeIn().delay(1000).fadeOut();
        
        return false;
@@ -190,7 +198,7 @@ function showSearchResult (key) {
     $('<li></li>').addClass('publ')
       .text("Издательство: " + JSON.parse(localStorage.getItem(key)).publ).appendTo($('#search-content'));
     $('<li></li>').addClass('price')
-      .text("Цена: " + JSON.parse(localStorage.getItem(key)).price).appendTo($('#search-content')); 
+      .text("Цена: " + JSON.parse(localStorage.getItem(key)).price + ' руб.').appendTo($('#search-content')); 
 }
 
 

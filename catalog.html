@@ -74,7 +74,7 @@
                           </div>
                           <div class="form-group">
                             <label for="edit-price">Цена</label>
-                            <input type="text" class="form-control" id="edit-price">
+                            <input type="number" step="1" min="0" max="5000" class="form-control" id="edit-price">
                           </div>
                           <span id="edit-alert"></span>
                           <button type="button" class="btn btn-default" id="cancel">Отменить изменения</button>
@@ -98,7 +98,7 @@
                           </div>
                           <div class="form-group">
                             <label for="input-price">Цена</label>
-                            <input type="text" class="form-control" id="input-price" placeholder="Введите цену книги...">
+                            <input type="number" class="form-control" id="input-price" placeholder="Введите цену книги...">
                           </div>
                           <button type="submit" class="btn btn-success" id="add">Добавить книгу</button>
                           <span id="alert"></span>
