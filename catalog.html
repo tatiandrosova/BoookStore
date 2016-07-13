@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<html>  
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title>Книжный магазин</title>
+    
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style/style.css" rel="stylesheet">
+    
+    <div>
+  </head>
+  
+<body>
+    <div id="header">
+        <div class="container">  
+            <div class="row-fluid">
+                <div id="divLogo" class="pull-left">
+                    <a href="catalog.html" id="divSiteTitle">Книжный магазин</a><br />
+                </div>
+            </div>
+        </div>
+    </div><br>
+  
+    <div class="modal fade" id="myModal" data-backdrop="static" style="background: #5cb85c">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Прототип базы данных для
+ книжного магазина</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="pass-form" enctype="multipart/form-data" method="post">
+                      <div>
+                        <label for="passwd">Введите пароль:</label>
+                        <input type="password" class="form-control" id="passwd">
+                      </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="passwd-btn" class="btn btn-success center-block">Войти</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="main">
+        <div id="left-col" class="row pull-left col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            
+         <!--   <div><h3>Список книг:</h3></div> -->
+            <div id="booklist">
+            </div>
+        </div>
+        <div id="right-col" class="row bg-success pull-right col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="">
+               <div id="edit-book" class="" style="display: none">
+                    <h4>Редактировать книгy</span></h4>
+                       <form id="edit-form" enctype="multipart/form-data" method="post">
+                          <div class="form-group">
+                            <label for="edit-title">Название книги</label>
+                            <input type="text" class="form-control" id="edit-title">
+                          </div>
+                          <div class="form-group">
+                            <label for="edit-author">Автор</label>
+                            <input type="text" class="form-control" id="edit-author">
+                          </div>
+                          <div class="form-group">
+                            <label for="edit-publ">Издательство</label>
+                            <input type="text" class="form-control" id="edit-publ">
+                          </div>
+                          <div class="form-group">
+                            <label for="edit-price">Цена</label>
+                            <input type="text" class="form-control" id="edit-price">
+                          </div>
+                          <span id="edit-alert"></span>
+                          <button type="button" class="btn btn-default" id="cancel">Отменить изменения</button>
+                          <button type="submit" class="btn btn-success" id="save">Сохранить</button>
+                        </form>
+                </div>
+                <div id="add-book" class="">
+                    <div class="title-window"><h4>Добавить новую книгу <span class="caret"></span></h4></div>
+                       <form id="add-form" enctype="multipart/form-data" method="post">
+                          <div class="form-group">
+                            <label for="input-title">Название книги</label>
+                            <input type="text" class="form-control" id="input-title" placeholder="Введите название книги...">
+                          </div>
+                          <div class="form-group">
+                            <label for="input-author">Автор</label>
+                            <input type="text" class="form-control" id="input-author" placeholder="Введите автора книги...">
+                          </div>
+                          <div class="form-group">
+                            <label for="input-publ">Издательство</label>
+                            <input type="text" class="form-control" id="input-publ" placeholder="Введите издательство...">
+                          </div>
+                          <div class="form-group">
+                            <label for="input-price">Цена</label>
+                            <input type="text" class="form-control" id="input-price" placeholder="Введите цену книги...">
+                          </div>
+                          <button type="submit" class="btn btn-success" id="add">Добавить книгу</button>
+                          <span id="alert"></span>
+                        </form>
+                </div>
+                <div id="sort-book" class="">
+                    <div class="title-window"><h4>Отсортировать книги <span class="caret"></span></h4></div>
+                    <div style="display: none">
+                        <div id="sort-type">
+                            <p><strong>Тип сортировки:</strong></p>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="type-radios" id="author-sort" checked> По автору
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="type-radios" id="publ-sort"> По издательству
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="type-radios" id="price-sort"> По цене
+                                </label>
+                            </div>
+                        </div>
+                        <div id="sort-order" style="display: none">
+                           <p><strong>Порядок сортировки:</strong></p>
+                           <div class="radio">
+                            <label>
+                                <input type="radio" name="order-radios" id="inc-sort"> По возрастанию
+                            </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="order-radios" id="dec-sort" checked> По убыванию
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success" id="sort">Применить</button>
+                    </div>
+                </div>
+                <div id="search-book" class="">
+                    <div class="title-window"><h4>Найти книги <span class="caret"></span></h4></div>
+                    <div style="display: none">
+                        <form id="add-form" enctype="multipart/form-data" method="post">
+                            <div class="form-group">
+                                <label for="search-author">Автор</label>
+                                <input type="text" class="form-control" id="search-author" placeholder="Введите автора книги...">
+                            </div>
+                            <div class="form-group">
+                                <label for="search-publ">Издательство</label>
+                                <input type="text" class="form-control" id="search-publ" placeholder="Введите издательство...">
+                            </div>
+                            <span id="search-alert"></span>
+                            <button type="submit" class="btn btn-success" id="search">Искать</button>
+                        </form>
+                        <br>
+                        <div id="search-result" style="display: none">
+                            <div id="search-result-title"><h4>Результаты поиска:</h4></div>
+                            <div id="search-content"></div>
+                        </div><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="script/addBook.js"></script>
+  
+</body>
+
+</html> 

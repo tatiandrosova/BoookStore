@@ -1,0 +1,29 @@
+li {
+    list-style-type: none;
+   }
+span {
+    margin: 10px;
+}
+
+.glyphicon {
+    cursor: pointer; 
+}
+
+#header {
+    background-color: rgb(64, 172, 98); 
+    height: 50px;
+    background-image:-moz-linear-gradient(bottom,#369656,#40ac62);background-image:-o-linear-gradient(bottom,#369656,#40ac62);background-image:-webkit-gradient(linear,left top, left bottom,from(#369656),to(#40ac62));background-image:-webkit-linear-gradient(bottom,#369656,#40ac62);background-image:linear-gradient(to bottom,#40ac62,#369656);background-image:linear-gradient(bottom,#369656,#40ac62); 
+}
+
+#divSiteTitle {
+    text-decoration:none;
+    color: rgb(255, 255, 255); 
+    font-size: 25px; 
+    text-shadow: none; 
+    line-height: 42px; 
+    letter-spacing: 2px; 
+    font-weight: normal; 
+    font-style: normal;
+}
+
+
